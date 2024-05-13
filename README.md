@@ -8,7 +8,7 @@
 <body>
     <h1>Ejercicio cajero</h1>
     <img src="diagrama.png" alt="">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sit non velit. Reprehenderit facilis itaque vel magnam aut, quia molestiae nemo corrupti et, voluptas aliquid nulla repudiandae. Corrupti, blanditiis. Quibusdam?</p>
+       
 
 </body>
 </html>
