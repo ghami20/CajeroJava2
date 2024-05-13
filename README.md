@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Ejercicio cajero</h1>
-    <img src="diagrama.pdf" alt="">
+    <img src="diagrama.png" alt="">
 </body>
 </html>
