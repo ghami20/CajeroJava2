@@ -1,3 +1,6 @@
+import java.time.LocalDateTime;
+
+import javax.swing.JOptionPane;
 
 public class Cuenta {
 
@@ -33,8 +36,21 @@ public class Cuenta {
 		return "Cuenta [cliente=" + cliente + ", saldo=" + saldo + ", transacciones=" + transacciones + "]";
 	}
 	public boolean RetirarDinero(int monto, Cajero cajero) {
-		return true;
+		
+		if (this.getSaldo()>monto) {
+			if (cajero.getSaldo()>monto) {
+				this.setTransacciones(this.getTransacciones() + "Se retiró dinero en el horario " + LocalDateTime.now().getHour() +  " "  + LocalDateTime.now().getMinute() + " monto a extraer :"+ monto + "\n");
+				this.setSaldo(this.getSaldo()-monto);
+				return true;
+			} else {
+				JOptionPane.showMessageDialog(null, "No hay saldo disponible en el cajero");
+				return false;
+			}
+		} else {
+			JOptionPane.showMessageDialog(null, "No tenes dinero suficiente en cuenta");
+			return false;
 
+		}
 	}
 	public boolean DepositarDinero(int monto,Cajero cajero) {
 		return true;

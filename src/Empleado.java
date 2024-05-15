@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Empleado extends Usuario{
 	private String turno;
@@ -22,6 +23,11 @@ public class Empleado extends Usuario{
 	public boolean MantenerCajero(Cajero cajero,int monto) {
 		
 		return true;
+	}
+	
+	@Override
+	public void menu(Cajero cajero) {
+		JOptionPane.showMessageDialog(null, "Estoy en el menu empleado");
 	}
 	
 }

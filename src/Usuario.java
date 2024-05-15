@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public abstract class Usuario {
 	private String nombre;
@@ -48,7 +49,18 @@ public abstract class Usuario {
 		return "Usuario [nombre=" + nombre + ", dni=" + dni + ", apellido=" + apellido + ", rol=" + rol + ", pin=" + pin
 				+ "]";
 	}
+	public boolean IngresarAlCajero(String dni,int pin) {
+		if (this.getDni().equals(dni) && this.getPin()==pin) {
+			return true;
+		} else {
+			return false;
+
+		}
+		
+	}
 	
-	
-	
+	public void menu(Cajero cajero) {
+		JOptionPane.showMessageDialog(null, "Estoy en el menu");
+	}
+		
 }
