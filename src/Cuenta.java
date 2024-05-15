@@ -39,8 +39,9 @@ public class Cuenta {
 		
 		if (this.getSaldo()>monto) {
 			if (cajero.getSaldo()>monto) {
-				this.setTransacciones(this.getTransacciones() + "Se retiró dinero en el horario " + LocalDateTime.now().getHour() +  " "  + LocalDateTime.now().getMinute() + " monto a extraer :"+ monto + "\n");
+				this.setTransacciones(this.getTransacciones() + "Se retiró dinero en el horario " + LocalDateTime.now().getHour() +  ":"  + LocalDateTime.now().getMinute() + " monto a extraer :"+ monto + "\n");
 				this.setSaldo(this.getSaldo()-monto);
+				cajero.setSaldo(cajero.getSaldo()-monto);
 				return true;
 			} else {
 				JOptionPane.showMessageDialog(null, "No hay saldo disponible en el cajero");
@@ -53,7 +54,15 @@ public class Cuenta {
 		}
 	}
 	public boolean DepositarDinero(int monto,Cajero cajero) {
-		return true;
+		
+		if (monto>0) {
+			this.setTransacciones(this.getTransacciones() + "Se deposito dinero en el horario " + LocalDateTime.now().getHour() +  ":"  + LocalDateTime.now().getMinute() + " monto a depositar fué :"+ monto + "\n");
+			this.setSaldo(this.getSaldo()+monto);
+			cajero.setSaldo(cajero.getSaldo()+monto);
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 }

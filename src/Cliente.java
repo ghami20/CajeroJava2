@@ -46,13 +46,20 @@ public class Cliente extends Usuario {
 				}
 				break;
 			case 1:
-
+				do {
+					 monto = Integer.parseInt(JOptionPane.showInputDialog( "Ingrese el monto"));
+				} while (monto< 1);
+				if (corriente.DepositarDinero(monto, cajero)) {
+					JOptionPane.showMessageDialog(null, "Pudo depositar dinero ! ahora la cuenta tiene : " + corriente.getSaldo());
+				} else {
+					JOptionPane.showMessageDialog(null, "No pudo depositar plata");
+				}
 				break;
 			case 2:
 				JOptionPane.showMessageDialog(null, "información de cuenta : " + corriente.getCliente() + "\n transacciones " +  corriente.getTransacciones() + "\n saldo restante " + corriente.getSaldo());
 				break;
 			case 3:
-
+				JOptionPane.showMessageDialog(null, "Salir");
 				break;
 			default:
 				break;

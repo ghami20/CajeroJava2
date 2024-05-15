@@ -8,7 +8,7 @@ public class Main {
 			"Cliente","Empleado","Salir"	
 		};
 		Cajero cajero1 = new Cajero("Corrientes",1000);
-		Cajero cajero2 = new Cajero("Callao",0);
+		Cajero cajero2 = new Cajero("Callao",100);
 		
 		String[] cajeros = {
 				"Corrientes","Callao"
